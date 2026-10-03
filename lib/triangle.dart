@@ -26,13 +26,16 @@ class Triangle {
     : this._(height * 304.8, width * 304.8, MeasurementSystem.feet);
 
   Triangle(double height, double width, MeasurementSystem measurementSystem)
-      : this._(
-          _convertToMm(height, measurementSystem),
-          _convertToMm(width, measurementSystem),
-          measurementSystem,
-        );
+    : this._(
+        _convertToMm(height, measurementSystem),
+        _convertToMm(width, measurementSystem),
+        measurementSystem,
+      );
 
-  static double _convertToMm(double value, MeasurementSystem measurementSystem) {
+  static double _convertToMm(
+    double value,
+    MeasurementSystem measurementSystem,
+  ) {
     switch (measurementSystem) {
       case MeasurementSystem.mm:
         return value;
